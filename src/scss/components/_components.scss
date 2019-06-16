@@ -1,0 +1,68 @@
+.dij-c-page {
+  @include make-container();
+  max-width: map-get($map: $grid-breakpoints, $key: xl);
+}
+
+.banana {
+  @include make-col-ready;
+
+  @include media-breakpoint-up(sm) {
+    @include make-col(6);
+  }
+
+  @include media-breakpoint-up(md) {
+    @include make-col(4);
+  }
+
+  p {
+    font-size: 3rem;
+    color: yellow;
+    font-weight: 600;
+    background-color: $primary;
+  }
+}
+
+.dij-c-header {
+  padding: rem(15px);
+  //-------
+  background: $primary; 
+  //-------
+  &__title {
+    margin-bottom: rem(45px);
+    text-align: center;
+  }
+}
+
+.dij-c-logo {
+  &__img {
+    width: 190px;
+  }
+}
+
+.dij-c-nav {
+  &__list {
+    display: flex;
+    justify-content: center;
+  }
+  &__listItem {
+    list-style-type: none;
+    padding-right: calc(3rem + (4 * (100vw - 1085px)/ 195));
+  }
+  &--v-header a {    
+      color: #ffffff;
+  }
+}
+
+.dij-c-section {
+  padding: rem(50px) 0;
+  &--v-bienvenue {
+    text-align: center;
+    &__text {
+      @include make-col-ready;
+      @include media-breakpoint-up(md) {
+        @include make-col(6);
+      }
+      margin: 0 auto;
+    }
+  }
+}
