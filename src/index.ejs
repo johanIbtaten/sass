@@ -1,97 +1,104 @@
 <%= require('@partials/header.ejs')({title: 'Homepage'}) %>
+
 <body>
-<div class="dij-c-page">
-    <header class="dij-c-header">
-        <div class="dij-c-logo">
-            <figure>
-                <a href="/">
-                    <img class="dij-c-logo__img"
-                        src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo1.png"
-                        alt="A beautiful photo">
-                </a>
-            </figure>
-        </div>
-        <h1 class="dij-c-header__title">Mon site internet</h1>
-        <nav class="dij-c-nav dij-c-nav--v-header">
-            <ul class="dij-c-nav__list">
-                <li class="dij-c-nav__listItem"><a class="dij-c-nav__link" href="#menu1">Menu 1</a></li>
-                <li class="dij-c-nav__listItem"><a class="dij-c-nav__link" href="#menu2">Menu 2</a></li>
-                <li class="dij-c-nav__listItem"><a class="dij-c-nav__link" href="#menu3">Menu 3</a></li>
-                <li class="dij-c-nav__listItem"><a class="dij-c-nav__link" href="#menu4">Menu 4</a></li>
-                <li class="dij-c-nav__listItem"><a class="dij-c-nav__link" href="#menu5">Menu 5</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section class="dij-c-section dij-c-section--v-bienvenue">
-        <h2>Bienvenue</h2>
-        <div class="row">
-            <p class="dij-c-section--v-bienvenue__text"><%= faker.lorem.sentences(4) %></p>
-        </div>
-    </section>
-    <section>
-        <% for(let i = 0; i < 3; i++) { %>
-        <div class="card">
-            <a href="#"><img class="card-img-top" src="https://dummyimage.com/640x16:9" alt="Card image"></a>
-            <div class="card-body">
-                <h5 class="card-title"><%= faker.lorem.words(3) %></h5>
-                <p class="card-text">
-                    <%= faker.lorem.sentences(4) %>
-                </p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+    <div class="dij-c-page">
+        <header class="dij-c-header">
+            <div class="dij-c-logo">
+                <figure>
+                    <a href="/">
+                        <img class="dij-c-logo__img"
+                            src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo1.png"
+                            alt="A beautiful photo">
+                    </a>
+                </figure>
             </div>
-        </div>
-        <% } %>
-    </section>
-    <section>
-        <h2>La Team</h2>
-        <% for(let i = 0; i < 8; i++) { %>
-        <div class="card">
-            <a href="#"><img class="card-img-top" src="https://dummyimage.com/640x16:9" alt="Card image">
-                <div class="card-body">
-                    <h5 class="card-title"><%= faker.lorem.words(3) %></h5>
+            <h1 class="dij-c-header__title">Mon site internet</h1>
+            <nav class="dij-c-nav dij-c-nav--v-header">
+                <ul class="dij-c-nav__list">
+                    <li class="dij-c-nav__listItem"><a class="dij-c-nav__link" href="#menu1">Menu 1</a></li>
+                    <li class="dij-c-nav__listItem"><a class="dij-c-nav__link" href="#menu2">Menu 2</a></li>
+                    <li class="dij-c-nav__listItem"><a class="dij-c-nav__link" href="#menu3">Menu 3</a></li>
+                    <li class="dij-c-nav__listItem"><a class="dij-c-nav__link" href="#menu4">Menu 4</a></li>
+                    <li class="dij-c-nav__listItem"><a class="dij-c-nav__link" href="#menu5">Menu 5</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="dij-c-section dij-c-section--v-bienvenue">
+            <h2>Bienvenue</h2>
+            <div class="row">
+                <p class="dij-c-section--v-bienvenue__text"><%= faker.lorem.sentences(4) %></p>
+            </div>
+        </section>
+        <section class="dij-c-section dij-c-section--t-dark dij-c-section--v-products">
+            <div class="row">
+                <% for(let i = 0; i < 3; i++) { %>
+                <div class="dij-c-section--v-products__cardWrapper">
+                    <div class="card">
+                        <a href="#"><img class="card-img-top" src="https://dummyimage.com/640x16:9"
+                                alt="Card image"></a>
+                        <div class="card-body">
+                            <h5 class="card-title"><%= faker.lorem.words(3) %></h5>
+                            <p class="card-text">
+                                <%= faker.lorem.sentences(4) %>
+                            </p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
                 </div>
-            </a>
-        </div>
-        <% } %>
-    </section>
 
-    <footer>
-        <form>
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Prénom">
+                <% } %>
             </div>
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Nom">
+
+        </section>
+        <section>
+            <h2>La Team</h2>
+            <% for(let i = 0; i < 8; i++) { %>
+            <div class="card">
+                <a href="#"><img class="card-img-top" src="https://dummyimage.com/640x16:9" alt="Card image">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= faker.lorem.words(3) %></h5>
+                    </div>
+                </a>
             </div>
-            <div class="form-group">
-                <input type="tel" class="form-control" placeholder="Numéro">
-            </div>
-            <div class="form-group">
-                <input type="email" class="form-control" placeholder="Email">
-            </div>
-            <div class="form-group">
-                <textarea class="form-control" rows="3" placeholder="Message"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-        <article>
-            <p><%= faker.lorem.sentences(10) %></p>
-        </article>
-    </footer>
+            <% } %>
+        </section>
+
+        <footer>
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Prénom">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Nom">
+                </div>
+                <div class="form-group">
+                    <input type="tel" class="form-control" placeholder="Numéro">
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" rows="3" placeholder="Message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <article>
+                <p><%= faker.lorem.sentences(10) %></p>
+            </article>
+        </footer>
+
+
+    </div>
 
 
 
-</div>
 
 
 
 
-
-
-
-<!-- <h1 class="title">Webpack tutorial</h1>
+    <!-- <h1 class="title">Webpack tutorial</h1>
     <button class="btn">Hit me</button>
-    <section class="container-fluid">
+    <section class="container">
         <div class="row">
             <div class="banana">
                 <p>banana 🍌 content</p>
@@ -144,4 +151,4 @@
         
         <button id="button">Cliquez ici</button> -->
 
-<%= require('@partials/footer.ejs')() %>
+    <%= require('@partials/footer.ejs')() %>
