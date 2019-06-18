@@ -4,6 +4,10 @@ import { sum, product } from './modules/math-functions';
 //import { showAlert } from "./modules/notLazyLoaded";
 import css from '@scss/main.scss';
 import lily from '@img/lily.jpg';
+import pirate from '@img/pirate.svg';
+import profits from '@img/profits.svg';
+import shield from '@img/shield.svg';
+import todolist from '@img/todolist.svg';
 
 const btn = document.querySelector('.btn');
 const title = document.querySelector('.title');

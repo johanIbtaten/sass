@@ -1,0 +1,23 @@
+
+// Google font include
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+// Google font import syntax:
+//
+// $name : Font name
+// $weight: Font weight 100 - 900 (default: 400)
+// $style : Font style normal/italic/oblique (default: normal)
+// $text : Limit request to these characters (quoted string)
+//
+// @include google-font($name, [$weight, $style, $text]);
+// @include google-font(Slapo 27px, 400 200, $text: 'Lorem ipsum dolor sit amet');
+//
+@include google-font {
+  @include google-font($primaryGoogleFont, 400 700);
+  @include google-font($secondaryGoogleFont);  
+}
+// CSS output:
+// Note! as Slapo 27px is limited to specific characters it will
+// not be merged with the other imports
+// @import url("//fonts.googleapis.com/css?family=Slapo+27px:400,200&text=Lorem%20ipsudlta");
+// @import url("//fonts.googleapis.com/css?family=Material+Icons:400|Open+Sans:300,400,700,300i,400i,700i|Lato:300,400i,700i,700,300i"); */
+

@@ -1,7 +1,7 @@
 <%= require('@partials/header.ejs')({title: 'Homepage'}) %>
 
-<body>
-    <div class="dij-c-page">
+<body class="dij-c-page">
+    <div class="dij-c-page__wrapper">
         <header class="dij-c-header">
             <div class="dij-c-logo">
                 <figure>
@@ -31,17 +31,19 @@
         </section>
         <section class="dij-c-section dij-c-section--t-dark dij-c-section--v-products">
             <div class="row">
-                <% for(let i = 0; i < 3; i++) { %>
+                <%  const productsImgTab = ['profits', 'shield', 'todolist']; %>
+                <% for (var i = 0; i < productsImgTab.length; i++) { %>
                 <div class="dij-c-section--v-products__cardWrapper">
-                    <div class="card">
-                        <a href="#"><img class="card-img-top" src="https://dummyimage.com/640x16:9"
-                                alt="Card image"></a>
-                        <div class="card-body">
+                    <div class="card dij-c-section--v-products__card">
+                        <a href="#" class="card__imgLink text-center">
+                            <img class="card__img" src="<%= require('@img/'+ productsImgTab[i] + '.svg') %>" alt="Card image">
+                        </a>
+                        <div class="card-body text-center">
                             <h5 class="card-title"><%= faker.lorem.words(3) %></h5>
                             <p class="card-text">
                                 <%= faker.lorem.sentences(4) %>
                             </p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <a href="#" class="btn btn-primary card__bodyLink">Go somewhere</a>
                         </div>
                     </div>
                 </div>
@@ -50,17 +52,23 @@
             </div>
 
         </section>
-        <section>
-            <h2>La Team</h2>
-            <% for(let i = 0; i < 8; i++) { %>
-            <div class="card">
-                <a href="#"><img class="card-img-top" src="https://dummyimage.com/640x16:9" alt="Card image">
-                    <div class="card-body">
-                        <h5 class="card-title"><%= faker.lorem.words(3) %></h5>
+        <section class="dij-c-section dij-c-section--v-team">
+            <h2 class="dij-c-section--v-team__title">La Team</h2>
+            <div class="row">
+                <% for(let i = 0; i < 8; i++) { %>
+                <div class="dij-c-section--v-team__cardWrapper">
+                    <div class="card dij-c-section--v-team__card border-0 w-100 ">
+                        <a href="#" class="text-center">
+                                <img class="card__img" src="<%= require('@img/pirate.svg') %>" alt="Card image">
+                        </a>
+                        <div class="card-body">
+                            <a href="#" class="card__bodyLink"><h5 class="card-title h2 text-center">chief <%= i %></h5></a>
+                        </div>
+
                     </div>
-                </a>
+                </div>
+                <% } %>
             </div>
-            <% } %>
         </section>
 
         <footer>

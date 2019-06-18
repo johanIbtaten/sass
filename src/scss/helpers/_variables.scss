@@ -1,7 +1,31 @@
+//-----------------------------
 // Boostrap variables custom
+//-----------------------------
 $primary: #286484;
 $card-border-radius: 0;
+$headings-font-weight: 700;
 
+//-----------------------------
 // My variables
+//-----------------------------
+
+// Fonts
 $global-font-size: 1rem;
+
+$primaryGoogleFont : 'Open Sans';
+$primaryGoogleFontStack : $primaryGoogleFont, sans-serif;
+
+$secondaryGoogleFont : 'Permanent Marker';
+$secondaryGoogleFontStack : $secondaryGoogleFont, sans-serif;
+
+// Spacing
+$sectionPaddingTop: 50px;
+$sectionPaddingBottom: 50px;
+$sectionPaddingLeft: 20px;
+$sectionPaddingRight: 20px;
+
+// Colors
+$textDark : #000;
+$textLight : #fff;
+
 

@@ -1,34 +1,33 @@
-
-// .banana {
-//   @include make-col-ready;
-
-//   @include media-breakpoint-up(sm) {
-//     @include make-col(6);
-//   }
-
-//   @include media-breakpoint-up(md) {
-//     @include make-col(4);
-//   }
-
-//   p {
-//     font-size: 3rem;
-//     color: yellow;
-//     font-weight: 600;
-//     background-color: $primary;
-//   }
+// Boostrap components modifiers
+// .card--fullWidth {
+//   width: 100%
 // }
 
+// .card--v-simple {
+//   border: none;
+// }
+
+// .card--v-simple .card-title {
+//   text-align: center;
+// }
+
+// My components
+
 .dij-c-page {
-  @include make-container();
-  max-width: map-get($map: $grid-breakpoints, $key: xl);
+  font-family: $primaryGoogleFontStack;
+  &__wrapper {
+    @include make-container();
+    max-width: map-get($map: $grid-breakpoints, $key: xl);
+  }
 }
 
 .dij-c-header {
-  padding: rem(15px);
+  padding: rem(20px);
   background: $primary;
   &__title {
     margin-bottom: rem(45px);
     text-align: center;
+    color: $textLight;
   }
 }
 
@@ -48,12 +47,15 @@
     padding-right: calc(3rem + (4 * (100vw - 1085px) / 195));
   }
   &--v-header a {
-    color: #ffffff;
+    color: $textLight;
   }
 }
 
-.dij-c-section {  
-  padding: rem(50px) 0;
+.dij-c-section {
+  padding-top: rem($sectionPaddingTop);
+  padding-bottom: rem($sectionPaddingBottom);
+  padding-left: rem($sectionPaddingLeft);
+  padding-right: rem($sectionPaddingRight); 
 
   &--v-bienvenue {
     text-align: center;
@@ -61,33 +63,71 @@
       @include make-col-ready;
       @include media-breakpoint-up(md) {
         @include make-col(6);
-      }
+      }      
       margin: 0 auto;
     }
   }
 
   &--v-products {
-    padding-left: rem(20px);
-    padding-right: rem(20px); 
+    &__cardWrapper {
+      @include make-col-ready;
+      @include media-breakpoint-up(md) {
+        @include make-col(4);
+      }      
+      display: flex;
+      align-items: stretch;
+    }
+    &__card {
+      .card-body {
+        display: flex;
+        flex-direction: column;
+      }
+      .card__img {
+        width: 160px;
+      }
+      .card__imgLink {
+        padding: rem(20px);
+      }
+      .card-text {
+        margin-bottom: rem(30px);
+      }
+      .card__bodyLink {
+        margin-top: auto;
+        align-self: center;
+      }
+    }
+  }
+
+  &--v-team {
+    padding-bottom: rem($sectionPaddingBottom - 30px);
+    &__title {
+      padding-bottom: rem(30px);
+      font-family: $secondaryGoogleFontStack;
+      text-align: center;
+    } 
     &__cardWrapper {
       @include make-col-ready;
       @include media-breakpoint-up(md) {
         @include make-col(4);
       }
+      @include media-breakpoint-up(lg) {
+        @include make-col(3);
+      }
       display: flex;
       align-items: stretch;
+      margin-bottom: rem(30px);
     }
+    &__card { 
+      .card__img {
+        width: 190px;
+      }
+      .card__bodyLink {
+        color: $textDark;
+      }
+    }    
   }
 
   &--t-dark {
     background-color: #ebebeb;
   }
 }
-
-// .dij-c-section--v-products .card {
-//   @include make-col-ready;
-//   @include media-breakpoint-up(md) {
-//     @include make-col(4);
-//   }
-//   margin: 0 auto;
-// }
