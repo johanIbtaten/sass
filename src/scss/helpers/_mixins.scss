@@ -169,3 +169,17 @@ $google-font-subsets: ('arabic' : false, 'bengali' : false, 'cyrillic' : false, 
     @return $list;
 }
 
+//-----------------------------
+// My mixins
+//-----------------------------
+
+// Mixin to generate boostrap col with breakpoints
+// @param {Map} $list
+@mixin dij-makeCol($list) {
+    @include make-col-ready;
+    @each $breakpoint, $colNum in $list {
+        @include media-breakpoint-up($breakpoint) {
+        @include make-col($colNum);
+        }
+    }
+}

@@ -41,6 +41,11 @@
   &__list {
     display: flex;
     justify-content: center;
+    @include media-breakpoint-down(sm) {
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+    }
   }
   &__listItem {
     list-style-type: none;
@@ -60,22 +65,26 @@
   &--v-bienvenue {
     text-align: center;
     &__text {
-      @include make-col-ready;
-      @include media-breakpoint-up(md) {
-        @include make-col(6);
-      }      
+      @include dij-makeCol(("md": 6));
       margin: 0 auto;
     }
   }
 
   &--v-products {
     &__cardWrapper {
-      @include make-col-ready;
-      @include media-breakpoint-up(md) {
-        @include make-col(4);
-      }      
+      // @include make-col-ready;
+      // @include media-breakpoint-up(md) {
+      //   @include make-col(4);
+      // }
+      @include dij-makeCol(("md": 4));
       display: flex;
       align-items: stretch;
+      @include media-breakpoint-down(sm) {
+        margin-bottom: rem(30px);
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
     }
     &__card {
       .card-body {
@@ -106,13 +115,14 @@
       text-align: center;
     } 
     &__cardWrapper {
-      @include make-col-ready;
-      @include media-breakpoint-up(md) {
-        @include make-col(4);
-      }
-      @include media-breakpoint-up(lg) {
-        @include make-col(3);
-      }
+      @include dij-makeCol(("md": 4, "lg": 3));
+      // @include make-col-ready;
+      // @include media-breakpoint-up(md) {
+      //   @include make-col(4);
+      // }
+      // @include media-breakpoint-up(lg) {
+      //   @include make-col(3);
+      // }
       display: flex;
       align-items: stretch;
       margin-bottom: rem(30px);
@@ -131,3 +141,27 @@
     background-color: #ebebeb;
   }
 }
+
+.dij-c-footer__formContact {
+  @include dij-makeCol(("md": 6));
+}
+.dij-c-formContact {
+  &__inner {
+    @include make-container();
+  }
+  &__wrapper {
+    @include dij-makeCol(("md": 6));
+    padding-left: 0;
+    padding-right: 0; 
+  }
+}
+
+.dij-c-footer__texte {
+  @include dij-makeCol(("md": 6));
+  text-align: center;
+  @include media-breakpoint-down(sm) {
+    text-align: left;
+    margin-top: rem(30px);
+  }
+}
+

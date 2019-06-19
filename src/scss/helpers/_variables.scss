@@ -4,13 +4,14 @@
 $primary: #286484;
 $card-border-radius: 0;
 $headings-font-weight: 700;
+$font-size-base: 1rem;
 
 //-----------------------------
 // My variables
 //-----------------------------
 
 // Fonts
-$global-font-size: 1rem;
+$global-font-size: $font-size-base;
 
 $primaryGoogleFont : 'Open Sans';
 $primaryGoogleFontStack : $primaryGoogleFont, sans-serif;

@@ -71,28 +71,36 @@
             </div>
         </section>
 
-        <footer>
-            <form>
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Prénom">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Nom">
-                </div>
-                <div class="form-group">
-                    <input type="tel" class="form-control" placeholder="Numéro">
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Email">
-                </div>
-                <div class="form-group">
-                    <textarea class="form-control" rows="3" placeholder="Message"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-            <article>
-                <p><%= faker.lorem.sentences(10) %></p>
-            </article>
+        <footer class="dij-c-footer">
+            <div class="row">
+                <form class="dij-c-formContact dij-c-footer__formContact">
+                    <div class="dij-c-formContact__inner">
+                        <div class="row">
+                            <div class="dij-c-formContact__wrapper">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Prénom">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Nom">
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" class="form-control" placeholder="Numéro">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Email">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" rows="3" placeholder="Message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success float-right">SEND</button>
+                </form>
+                <article class="dij-c-footer__texte">
+                    <p><%= faker.lorem.sentences(10) %></p>
+                </article>
+            </div>
         </footer>
 
 
