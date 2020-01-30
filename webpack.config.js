@@ -1,5 +1,5 @@
 // Variables
-const outputPath = './dist';
+const outputPath = './docs';
 const srcPath = './src';
 const stylesDist = './styles/';
 const jsDist = './js/';
